@@ -1,6 +1,7 @@
 from utils import format_price
 import time
 from datetime import datetime, timedelta
+import json
 
 # Get existing open positions
 def is_open_positions(client,market):
@@ -83,5 +84,9 @@ def close_all_positions(client):
 
       # Protect API from request limit
       time.sleep(1)
+
+      # override json file with empty list
+      with open("bot_agents.json", "w") as f:
+        json.dump([], f)
 
     return close_orders
