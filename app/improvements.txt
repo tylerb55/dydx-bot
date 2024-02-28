@@ -1,0 +1,3 @@
+XLM trading? can only trade in factor of 10?
+better spread and cointegration calulcations?
+upgrade to v4

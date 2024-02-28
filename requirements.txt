@@ -1,3 +1,7 @@
 dydx-v3-python
 #v4-client-py
 web3
+python-decouple
+dash
+pandas
+tqdm
