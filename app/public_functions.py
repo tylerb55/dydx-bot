@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
+import requests
 import time
 from pprint import pprint
 from datetime import datetime
@@ -18,6 +19,8 @@ from constants import (
   DYDX_API_PASSPHRASE,
   STARK_PRIVATE_KEY,
   HTTP_PROVIDER,
+  TELEGRAM_BOT_TOKEN,
+  TELEGRAM_CHAT_ID,
   MODE,
   RESOLUTION
 )
@@ -136,3 +139,10 @@ def plot_figures(fig):
       dcc.Graph(figure=fig)
   ])
   app.run_server(debug=True, use_reloader=True)
+
+def telegram_bot_sendtext(bot_message):
+  bot_token = TELEGRAM_BOT_TOKEN
+  bot_chatID = TELEGRAM_CHAT_ID
+  send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
+  response = requests.get(send_text)
+  return response.json()

@@ -64,3 +64,7 @@ API_HOST = API_HOST_SEPOLIA if MODE == "DEVELOPMENT" else API_HOST_MAINNET
 # HTTP PROVIDER
 HTTP_PROVIDER = "https://eth-mainnet.g.alchemy.com/v2/tTkLrrep6gje2rmUI8ZYe2dcdgLULboe" if MODE == "PRODUCTION" else "https://eth-sepolia.g.alchemy.com/v2/rrjOCTZkiQgKiUJGV11whXSgv0gacL-3"
 
+# TELEGRAM BOT
+TELEGRAM_BOT_TOKEN = config("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID = config("TELEGRAM_CHAT_ID")
+

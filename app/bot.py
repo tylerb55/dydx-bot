@@ -1,4 +1,5 @@
 from private_functions import place_market_order, check_order_status
+from public_functions import telegram_bot_sendtext
 from datetime import datetime, timedelta
 import time
 from pprint import pprint
@@ -134,6 +135,8 @@ class BotAgent:
           print(order_status_close)
 
           # !! SEND ALERT TO TELEGRAM !!
+          telegram_bot_sendtext(f"Error code 100: Failed to close {self.market_1} order: {str(order_status_close)} please check DYDX")
+
 
           exit(1)
 
@@ -146,6 +149,7 @@ class BotAgent:
         print(order_status_close)
 
         # !! SEND ALERT TO TELEGRAM !!
+        telegram_bot_sendtext(f"Error code 100: Failed to close {self.market_1} order: {str(order_status_close)} please check DYDX")
 
         exit(1)
       return self.order_dict
